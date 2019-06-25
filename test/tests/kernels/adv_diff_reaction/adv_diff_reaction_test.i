@@ -114,12 +114,9 @@
 
 [Outputs]
   [png]
-    type = PNGTest
-    PNGFile = "Thomas"
-    resolution = 500
-#    picked = 20
-    disty = 1
-    distx = 1
+    type = PNGObject
+    PNGFile = "PNGTEST"
+    resolution = 50
     inColor = false
   []
   file_base = out

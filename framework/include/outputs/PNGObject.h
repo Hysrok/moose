@@ -10,18 +10,21 @@
 #pragma once
 
 // Forward declarations
-class PNGTest;
+class PNGObject;
 
 template <>
-InputParameters validParams<PNGTest>();
+InputParameters validParams<PNGObject>();
 
 // MOOSE includes
 #include "Output.h"
-class PNGTest : public Output
+class PNGObject : public Output
 {
 public:
   //Basic constructor.  Takes parameters passed in to create a PNGCreator object.
-  PNGTest(const InputParameters & parameters);
+  PNGObject(const InputParameters & parameters);
+
+  // Method for assigning color values to the PNG
+  void setRGB(png_byte *rgb, float selection);
 
   // Function to create the mesh_function
   void makeMeshFunc();
@@ -42,23 +45,13 @@ public:
   std::string PNGFile;
 
   // Specific test step to create the image for.
-  Real picked;
-
-  //deprecated previous way of setting up the bounds
-  Real xdist;
-  Real ydist;
+  Real testStepToPNG;
 
   // Way to specify color vs grayscale image creation.
   bool inColor;
 
   // Way to track the number test step number and the associated png, if created.
-  Real numpng = 0;
-
-  //deprecated increment string value.
-  std::string appe = "one";
-
-  /// The XDA or ExodusII file that is being read---------propaply won't use in this iteration.
-//  std::string _mesh_file;
+  Real testStep = 0;
 
   /// Pointer the libMesh::MeshFunction object that the read data is stored
   std::unique_ptr<MeshFunction> _mesh_function;

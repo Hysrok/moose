@@ -71,13 +71,10 @@
 
 [Outputs]
   [png]
-    type = PNGTest
-    PNGFile = "Thomas"
+    type = PNGObject
+    PNGFile = "PNGTEST"
     resolution = 250
-#    picked = 20
-    disty = 1
-    distx = 1
-    inColor = true
+    inColor = false
   []
   execute_on = 'timestep_end'
   file_base = out_wedge
