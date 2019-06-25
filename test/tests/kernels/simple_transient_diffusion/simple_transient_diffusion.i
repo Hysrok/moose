@@ -1,3 +1,16 @@
+[Outputs]
+  [png]
+    type = PNGTest
+    PNGFile = "Thomas"
+    resolution = 250
+#    picked = 20
+    disty = 1
+    distx = 1
+    inColor = true
+  []
+  exodus = true
+[]
+
 [Mesh]
   type = GeneratedMesh
   dim = 2
@@ -46,6 +59,6 @@
   petsc_options_value = 'hypre boomeramg'
 []
 
-[Outputs]
-  exodus = true
-[]
+#[Outputs]
+#  exodus = true
+#[]

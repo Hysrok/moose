@@ -70,8 +70,16 @@
 []
 
 [Outputs]
+  [png]
+    type = PNGTest
+    PNGFile = "Thomas"
+    resolution = 250
+#    picked = 20
+    disty = 1
+    distx = 1
+    inColor = true
+  []
   execute_on = 'timestep_end'
   file_base = out_wedge
   exodus = true
 []
-
